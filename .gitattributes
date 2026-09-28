@@ -1,0 +1,7 @@
+# Preserve existing source bytes: experiment provenance stores SHA256 hashes.
+# -text disables line-ending conversion, while Git can still display text diffs.
+* -text
+
+# Linux launchers must remain LF without a UTF-8 BOM.
+*.sh text eol=lf
+

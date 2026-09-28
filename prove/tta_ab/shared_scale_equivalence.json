@@ -1,0 +1,12 @@
+[
+  {
+    "name": "0945.png",
+    "B_max_logit_difference": 0.0,
+    "B_mask_exact_match": true
+  },
+  {
+    "name": "0285.png",
+    "B_max_logit_difference": 0.0,
+    "B_mask_exact_match": true
+  }
+]

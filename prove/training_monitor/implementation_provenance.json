@@ -1,0 +1,6 @@
+{
+  "base_train_path": "C:\\Users\\47348\\Desktop\\AIC2\\qw-advice\\train.py",
+  "base_train_sha256": "cc4bdd80b546bc7c22681d658101f570bf6fd54e3dbefef548f4e3c05a20beaf",
+  "base_snapshot": "baseline_train.py",
+  "scope": "Independent monitoring entry; original train.py and uavseg sources unchanged."
+}

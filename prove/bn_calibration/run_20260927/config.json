@@ -1,0 +1,33 @@
+{
+  "checkpoint": "C:\\Users\\47348\\Desktop\\AIC2\\qw-advice\\runs\\runs\\continue-v1\\best_tta.pt",
+  "checkpoint_sha256": "75e0015b6f4372d2a9271e7b2bf95c73a2570a219758f2941afe5de6dcaa1397",
+  "epoch": 62,
+  "data_root": "C:\\Users\\47348\\Desktop\\AIC2\\qw-advice\\2026-低空图像语义分割赛道-训练集\\train\\train",
+  "split_sha256": "d2c8595a0cb2ca16a531f5370fbebf68dba8ac799ebc32ed60df965362209844",
+  "calibration_images": 6297,
+  "validation_images": 699,
+  "train_eval_images": 256,
+  "crop_size": 768,
+  "calibration_batch_size": 4,
+  "seed": 2026,
+  "calibration_source": "saved train split only; images only; center crop; no augmentation",
+  "inference_config": {
+    "scales": [
+      0.75,
+      1.0,
+      1.25
+    ],
+    "tta": true,
+    "tile": 768,
+    "overlap": 192,
+    "batch_size": 2,
+    "amp": true
+  },
+  "torch": "2.13.0+cu126",
+  "cuda": "12.6",
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "python": "3.10.20 | packaged by Anaconda, Inc. | (main, Jun 11 2026, 15:13:20) [MSC v.1942 64 bit (AMD64)]",
+  "script_sha256": "e1143f8d1e62d2c37babd91dc5e451b496fdc0d95df021db27f2635276cc32d7",
+  "historical_val_miou": 0.7485805395540324,
+  "historical_tta_miou": 0.7681208300141876
+}

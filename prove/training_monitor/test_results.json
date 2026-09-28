@@ -1,0 +1,19 @@
+{
+  "synthetic_smoke_only": true,
+  "tests_run": 6,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "checks": [
+    "unchanged parameter updates",
+    "epoch loss components and class IoU",
+    "CSV and TensorBoard",
+    "interruption/resume/rollback",
+    "separate final TTA",
+    "nonfinite-loss diagnostics",
+    "zero-LR restart and schedule continuity",
+    "explicit restart safeguards"
+  ],
+  "synthetic_output": "C:\\Users\\47348\\Desktop\\AIC2\\qw-advice\\prove\\training_monitor\\smoke_output_b60915f2"
+}

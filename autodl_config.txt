@@ -1,0 +1,215 @@
+# AutoDL 租用配置建议
+
+## 🎯 推荐配置
+
+### 方案1：极速版（最强推荐）
+- **GPU型号**: NVIDIA A100 80GB 或 A800 80GB
+- **价格**: ¥8-12/小时
+- **训练配置**: 
+  - Backbone: ResNet101
+  - Crop Size: 1024×1024
+  - Batch Size: 8
+  - Epochs: 50
+- **预计时间**: 
+  - 每轮: ~3-4分钟
+  - 50轮总时间: **2.5-3.5小时**
+- **总成本**: ¥25-40
+- **预期 mIoU**: 76-80%
+
+### 方案2：性价比版
+- **GPU型号**: RTX 4090 24GB
+- **价格**: ¥2-3/小时
+- **训练配置**:
+  - Backbone: ResNet101
+  - Crop Size: 768×768
+  - Batch Size: 4
+  - Epochs: 50
+- **预计时间**:
+  - 每轮: ~6-8分钟
+  - 50轮总时间: **5-7小时**
+- **总成本**: ¥12-20
+- **预期 mIoU**: 74-78%
+
+### 方案3：双卡并行（如果支持）
+- **GPU型号**: 2× A100 80GB
+- **价格**: ¥16-24/小时
+- **训练配置**:
+  - 使用 DistributedDataParallel
+  - Batch Size: 16 (每卡8)
+  - 其他同上
+- **预计时间**: **1.5-2小时**
+- **总成本**: ¥25-45
+- **注意**: 需要修改代码支持多卡训练
+
+---
+
+## 📋 AutoDL 操作步骤
+
+### 1. 注册并充值
+- 访问 https://www.autodl.com/
+- 注册账号，充值 ¥50-100
+
+### 2. 创建实例
+- 选择 "自定义镜像" 或 "PyTorch 2.3 + CUDA 12.1"
+- GPU 选择: **A100 80GB**
+- CPU: 8核以上
+- 内存: 32GB以上
+- 磁盘: 100GB SSD
+
+### 3. 上传数据
+方式1: 网盘挂载（推荐）
+- 将数据集上传到百度网盘/阿里云盘
+- 在 AutoDL 控制台挂载网盘
+
+方式2: 直接上传
+```bash
+# 使用 SCP 上传
+scp -r qw-advice root@your-instance-ip:/root/
+scp -r "2026-低空图像语义分割赛道-训练集" root@your-instance-ip:/root/data/
+```
+
+方式3: Git 克隆
+```bash
+git clone <your-repo-url>
+```
+
+### 4. 安装依赖
+```bash
+cd /root/qw-advice
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+### 5. 开始训练
+```bash
+# A100 最强配置
+python train.py \
+  --data-root "/root/data/2026-低空图像语义分割赛道-训练集/train/train" \
+  --output runs/a100-best \
+  --backbone resnet101 \
+  --crop-size 1024 \
+  --batch-size 8 \
+  --epochs 50 \
+  --workers 8 \
+  --use-class-weights \
+  --patience 10
+```
+
+### 6. 监控训练
+- AutoDL 提供 Jupyter Notebook
+- 可以实时查看损失曲线和 mIoU
+- 也可以 SSH 连接后用 `tail -f` 查看日志
+
+### 7. 下载结果
+训练完成后：
+```bash
+# 打包模型
+cd /root/qw-advice
+zip -r models.zip runs/a100-best/
+
+# 下载到本地
+scp root@your-instance-ip:/root/qw-advice/models.zip ./
+```
+
+或者使用 AutoDL 的文件管理界面下载。
+
+---
+
+## ⏱️ 时间对比
+
+| 平台 | GPU | 50轮时间 | 成本 |
+|------|-----|---------|------|
+| 本地 | RTX 4070 (8GB) | 8-10小时 | ¥0 |
+| AutoDL | RTX 4090 (24GB) | 5-7小时 | ¥12-20 |
+| AutoDL | A100 80GB | **2.5-3.5小时** | **¥25-40** |
+| AutoDL | 2×A100 80GB | **1.5-2小时** | **¥25-45** |
+
+---
+
+## 💡 极速技巧
+
+### 1. 使用预创建镜像
+AutoDL 有预装 PyTorch 的镜像，可以节省环境配置时间（约10分钟）
+
+### 2. 数据预处理
+如果数据集很大，可以先压缩再上传：
+```powershell
+# Windows 压缩
+Compress-Archive -Path "2026-低空图像语义分割赛道-训练集" -DestinationPath "dataset.zip"
+```
+
+### 3. 后台运行
+使用 `nohup` 或 `tmux` 防止断开连接：
+```bash
+tmux new -s training
+python train.py ...
+# Ctrl+B, D 分离会话
+# tmux attach -t training 重新连接
+```
+
+### 4. 自动停止
+设置早停可以避免浪费：
+```bash
+--patience 10  # 连续10轮无提升则停止
+```
+
+---
+
+## 🎯 最终建议
+
+**既然你不差钱、要快：**
+
+1. **租 A100 80GB**（单卡即可）
+2. **训练 50 轮，1024分辨率**
+3. **预计 3 小时内完成**
+4. **成本约 ¥30-40**
+5. **预期 mIoU 76-80%，排名前 10%**
+
+如果需要更快，可以租 **2×A100** 并修改代码支持分布式训练，但我建议先用单卡跑通，确认效果好后再考虑多卡。
+
+---
+
+## 📝 快速启动命令（复制到 AutoDL）
+
+```bash
+# 1. 进入目录
+cd /root/qw-advice
+
+# 2. 安装依赖（如果使用预装镜像可跳过）
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# 3. 检查环境
+python check_env.py
+
+# 4. 开始训练（A100 最强配置）
+python train.py \
+  --data-root "/root/data/2026-低空图像语义分割赛道-训练集/train/train" \
+  --output runs/a100-v1 \
+  --backbone resnet101 \
+  --crop-size 1024 \
+  --batch-size 8 \
+  --epochs 50 \
+  --lr 3e-4 \
+  --workers 8 \
+  --use-class-weights \
+  --patience 10 \
+  2>&1 | tee training.log
+
+# 5. 训练完成后推理
+python predict.py \
+  --images "/root/data/test/images" \
+  --checkpoint runs/a100-v1/best.pt \
+  --output submission/masks \
+  --tta \
+  --multi-scale \
+  --batch-size 16
+
+# 6. 验证提交
+python validate_submission.py \
+  --images "/root/data/test/images" \
+  --masks submission/masks \
+  --zip submission/submission.zip
+```
+
+---
+
+你现在可以去 AutoDL 注册并租用 A100 了！需要我帮你准备数据上传脚本或其他配置文件吗？

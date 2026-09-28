@@ -1,0 +1,6 @@
+{
+  "change": "Explicit restart of completed training with original weights/split and a fresh optimizer/schedule",
+  "before_train_monitored_sha256": "929a86d8417c08a46e60b64ed210ec986cb677bc4768eaf37a6acb0a7642b01b",
+  "after_train_monitored_sha256": "c0bd1eb5aff8fcfb59f023fd8d86ed64bf3d4541f5244a7bf9fe863ddf473eb9",
+  "root_train_unchanged": true
+}

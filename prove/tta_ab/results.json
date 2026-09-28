@@ -1,0 +1,461 @@
+{
+  "complete": true,
+  "checkpoint_epoch": 50,
+  "validation_images": 699,
+  "evaluated_images": 699,
+  "A": {
+    "miou": 0.7669331001655213,
+    "valid_pixels": 722022158,
+    "per_class": [
+      {
+        "id": 1,
+        "name": "Background",
+        "name_zh": "背景",
+        "iou": 0.6765038213655254,
+        "intersection": 148181945,
+        "union": 219040810,
+        "ground_truth_pixels": 195697249
+      },
+      {
+        "id": 2,
+        "name": "Building",
+        "name_zh": "建筑",
+        "iou": 0.8408945352673021,
+        "intersection": 115845374,
+        "union": 137764451,
+        "ground_truth_pixels": 124621078
+      },
+      {
+        "id": 3,
+        "name": "Road",
+        "name_zh": "道路",
+        "iou": 0.8178021282899751,
+        "intersection": 59804315,
+        "union": 73128099,
+        "ground_truth_pixels": 64151751
+      },
+      {
+        "id": 4,
+        "name": "Water",
+        "name_zh": "水体",
+        "iou": 0.8772682699586639,
+        "intersection": 51741887,
+        "union": 58980689,
+        "ground_truth_pixels": 53622212
+      },
+      {
+        "id": 5,
+        "name": "Barren",
+        "name_zh": "裸地",
+        "iou": 0.5101377444348243,
+        "intersection": 11506543,
+        "union": 22555757,
+        "ground_truth_pixels": 13364341
+      },
+      {
+        "id": 6,
+        "name": "Vegetation",
+        "name_zh": "植被",
+        "iou": 0.8727580572184908,
+        "intersection": 192778762,
+        "union": 220884540,
+        "ground_truth_pixels": 208870226
+      },
+      {
+        "id": 7,
+        "name": "Agricultural",
+        "name_zh": "农田",
+        "iou": 0.7769935903564602,
+        "intersection": 51906422,
+        "union": 66804183,
+        "ground_truth_pixels": 55805458
+      },
+      {
+        "id": 8,
+        "name": "Vehicle",
+        "name_zh": "车辆",
+        "iou": 0.7631066544329291,
+        "intersection": 5678823,
+        "union": 7441716,
+        "ground_truth_pixels": 5889843
+      }
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        148181945,
+        11809580,
+        7357068,
+        3573489,
+        6536007,
+        9049495,
+        8295640,
+        894025
+      ],
+      [
+        0,
+        5977164,
+        115845374,
+        307171,
+        41883,
+        875583,
+        1408626,
+        132418,
+        32859
+      ],
+      [
+        0,
+        2779808,
+        431230,
+        59804315,
+        15445,
+        83986,
+        485423,
+        174251,
+        377293
+      ],
+      [
+        0,
+        630871,
+        1949,
+        7853,
+        51741887,
+        80170,
+        189699,
+        969783,
+        0
+      ],
+      [
+        0,
+        987173,
+        139869,
+        16746,
+        131933,
+        11506543,
+        121961,
+        460116,
+        0
+      ],
+      [
+        0,
+        10926372,
+        741185,
+        1135481,
+        1036069,
+        1038144,
+        192778762,
+        966517,
+        247696
+      ],
+      [
+        0,
+        1968451,
+        12844,
+        87105,
+        559658,
+        577526,
+        693452,
+        51906422,
+        0
+      ],
+      [
+        0,
+        73722,
+        6716,
+        64924,
+        0,
+        0,
+        65658,
+        0,
+        5678823
+      ]
+    ],
+    "scales": [
+      1.0
+    ],
+    "horizontal_flip": true,
+    "inference_seconds": 280.4681044000022,
+    "mean_seconds_per_image": 0.4012419233190303
+  },
+  "B": {
+    "miou": 0.7758190096826263,
+    "valid_pixels": 722022158,
+    "per_class": [
+      {
+        "id": 1,
+        "name": "Background",
+        "name_zh": "背景",
+        "iou": 0.6905607395662522,
+        "intersection": 151277426,
+        "union": 219064620,
+        "ground_truth_pixels": 195697249
+      },
+      {
+        "id": 2,
+        "name": "Building",
+        "name_zh": "建筑",
+        "iou": 0.8458579040019544,
+        "intersection": 116076236,
+        "union": 137229002,
+        "ground_truth_pixels": 124621078
+      },
+      {
+        "id": 3,
+        "name": "Road",
+        "name_zh": "道路",
+        "iou": 0.8269943230581104,
+        "intersection": 59926746,
+        "union": 72463310,
+        "ground_truth_pixels": 64151751
+      },
+      {
+        "id": 4,
+        "name": "Water",
+        "name_zh": "水体",
+        "iou": 0.881559927237494,
+        "intersection": 51713655,
+        "union": 58661531,
+        "ground_truth_pixels": 53622212
+      },
+      {
+        "id": 5,
+        "name": "Barren",
+        "name_zh": "裸地",
+        "iou": 0.5355299100658,
+        "intersection": 11357551,
+        "union": 21208061,
+        "ground_truth_pixels": 13364341
+      },
+      {
+        "id": 6,
+        "name": "Vegetation",
+        "name_zh": "植被",
+        "iou": 0.878226734446353,
+        "intersection": 193288518,
+        "union": 220089540,
+        "ground_truth_pixels": 208870226
+      },
+      {
+        "id": 7,
+        "name": "Agricultural",
+        "name_zh": "农田",
+        "iou": 0.783137043803869,
+        "intersection": 52080128,
+        "union": 66501934,
+        "ground_truth_pixels": 55805458
+      },
+      {
+        "id": 8,
+        "name": "Vehicle",
+        "name_zh": "车辆",
+        "iou": 0.764685495281177,
+        "intersection": 5679206,
+        "union": 7426852,
+        "ground_truth_pixels": 5889843
+      }
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        151277426,
+        11355743,
+        6793889,
+        3438813,
+        5412578,
+        8557720,
+        7958772,
+        902308
+      ],
+      [
+        0,
+        5980128,
+        116076236,
+        259141,
+        31734,
+        852148,
+        1261904,
+        129670,
+        30117
+      ],
+      [
+        0,
+        2731117,
+        396796,
+        59926746,
+        13061,
+        73389,
+        464475,
+        177552,
+        368615
+      ],
+      [
+        0,
+        696005,
+        785,
+        7390,
+        51713655,
+        66869,
+        175186,
+        962322,
+        0
+      ],
+      [
+        0,
+        1224267,
+        89285,
+        13464,
+        113012,
+        11357551,
+        133583,
+        433179,
+        0
+      ],
+      [
+        0,
+        10571873,
+        751323,
+        1102325,
+        910114,
+        975123,
+        193288518,
+        1034981,
+        235969
+      ],
+      [
+        0,
+        2084941,
+        9685,
+        73652,
+        532585,
+        463613,
+        560854,
+        52080128,
+        0
+      ],
+      [
+        0,
+        79040,
+        4307,
+        61698,
+        0,
+        0,
+        65592,
+        0,
+        5679206
+      ]
+    ],
+    "scales": [
+      0.75,
+      1.0,
+      1.25
+    ],
+    "horizontal_flip": true,
+    "inference_seconds": 626.5250734000092,
+    "mean_seconds_per_image": 0.8963162709585253
+  },
+  "delta_B_minus_A": 0.008885909517104995,
+  "delta_percentage_points": 0.8885909517104995,
+  "winner_on_this_validation_set": "B",
+  "B_to_A_inference_time_ratio": 2.2338549859005083,
+  "per_class_delta_B_minus_A": [
+    {
+      "id": 1,
+      "name": "Background",
+      "name_zh": "背景",
+      "delta": 0.014056918200726742,
+      "delta_percentage_points": 1.4056918200726742
+    },
+    {
+      "id": 2,
+      "name": "Building",
+      "name_zh": "建筑",
+      "delta": 0.004963368734652307,
+      "delta_percentage_points": 0.4963368734652307
+    },
+    {
+      "id": 3,
+      "name": "Road",
+      "name_zh": "道路",
+      "delta": 0.009192194768135264,
+      "delta_percentage_points": 0.9192194768135264
+    },
+    {
+      "id": 4,
+      "name": "Water",
+      "name_zh": "水体",
+      "delta": 0.004291657278830074,
+      "delta_percentage_points": 0.42916572788300744
+    },
+    {
+      "id": 5,
+      "name": "Barren",
+      "name_zh": "裸地",
+      "delta": 0.025392165630975683,
+      "delta_percentage_points": 2.5392165630975683
+    },
+    {
+      "id": 6,
+      "name": "Vegetation",
+      "name_zh": "植被",
+      "delta": 0.005468677227862262,
+      "delta_percentage_points": 0.5468677227862262
+    },
+    {
+      "id": 7,
+      "name": "Agricultural",
+      "name_zh": "农田",
+      "delta": 0.006143453447408742,
+      "delta_percentage_points": 0.6143453447408742
+    },
+    {
+      "id": 8,
+      "name": "Vehicle",
+      "name_zh": "车辆",
+      "delta": 0.0015788408482478866,
+      "delta_percentage_points": 0.15788408482478866
+    }
+  ],
+  "independent_numpy_and_project_confusion_matrices_agree": true,
+  "shared_scale_equivalence": [
+    {
+      "name": "0945.png",
+      "B_max_logit_difference": 0.0,
+      "B_mask_exact_match": true
+    },
+    {
+      "name": "0285.png",
+      "B_max_logit_difference": 0.0,
+      "B_mask_exact_match": true
+    }
+  ],
+  "inputs_and_sources_unchanged": true,
+  "timing_note": "CUDA-synchronized warmed-up inference only; excludes I/O and metrics. B includes the reused 1.0-scale inference time. These are strategy inference-work timings, not independent end-to-end runs.",
+  "limitations": [
+    "Existing model-selection validation split, not an independent competition test set.",
+    "Only scales differ; weights, full images, flip, tile, overlap, batch size and precision match.",
+    "Validation results do not guarantee the same improvement on the test set.",
+    "No training or changes to original training/production inference source files."
+  ]
+}
