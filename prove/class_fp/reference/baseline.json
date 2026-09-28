@@ -1,0 +1,572 @@
+{
+  "source_run": "C:\\Users\\47348\\Desktop\\AIC2\\qw-advice\\runs\\runs\\continue-v1",
+  "checkpoint_epoch": 62,
+  "checkpoint_sha256": "75e0015b6f4372d2a9271e7b2bf95c73a2570a219758f2941afe5de6dcaa1397",
+  "split_sha256": "d2c8595a0cb2ca16a531f5370fbebf68dba8ac799ebc32ed60df965362209844",
+  "validation_images": 699,
+  "training_images": 6297,
+  "tta_miou": 0.7681208300141876,
+  "inference_config": {
+    "scales": [
+      0.75,
+      1.0,
+      1.25
+    ],
+    "tta": true,
+    "tile": 768,
+    "overlap": 192,
+    "batch_size": 2,
+    "amp": true
+  },
+  "training_args": {
+    "data_root": "2026-低空图像语义分割赛道-训练集/train",
+    "output": "runs/continue-v1",
+    "epochs": 70,
+    "batch_size": 4,
+    "crop_size": 768,
+    "lr": 3e-05,
+    "workers": 4,
+    "val_ratio": 0.1,
+    "seed": 2026,
+    "no_pretrained": false,
+    "resume": null,
+    "backbone": "resnet101",
+    "use_class_weights": true,
+    "patience": 0,
+    "keep_best": 3,
+    "tta_batch_size": 2,
+    "skip_final_tta": false,
+    "log_every": 50,
+    "train_eval_images": 256,
+    "train_eval_every": 1,
+    "no_tensorboard": false
+  },
+  "confusion_matrix": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      154608884,
+      9654453,
+      7146571,
+      2855615,
+      4131201,
+      9111852,
+      7163448,
+      1025225
+    ],
+    [
+      0,
+      7323445,
+      113637162,
+      555845,
+      16587,
+      733731,
+      2170253,
+      143619,
+      40436
+    ],
+    [
+      0,
+      2894175,
+      448590,
+      59634438,
+      9236,
+      74140,
+      491760,
+      134731,
+      464681
+    ],
+    [
+      0,
+      1012371,
+      2680,
+      201488,
+      51265050,
+      66722,
+      227135,
+      846766,
+      0
+    ],
+    [
+      0,
+      2079901,
+      390922,
+      92190,
+      121070,
+      10111668,
+      156700,
+      411890,
+      0
+    ],
+    [
+      0,
+      10356363,
+      622265,
+      1272182,
+      775983,
+      877071,
+      193519071,
+      1103844,
+      343447
+    ],
+    [
+      0,
+      2244465,
+      5254,
+      240114,
+      466512,
+      433656,
+      643365,
+      51772092,
+      0
+    ],
+    [
+      0,
+      39412,
+      11646,
+      34792,
+      0,
+      0,
+      61903,
+      0,
+      5742090
+    ]
+  ],
+  "false_positive_diagnostics": {
+    "schema_version": 1,
+    "confusion_matrix_axes": {
+      "rows": "ground_truth",
+      "columns": "prediction"
+    },
+    "ignored_ground_truth_id": 0,
+    "ignored_ground_truth_pixels": 0,
+    "valid_pixels": 722022158,
+    "per_class": [
+      {
+        "class_id": 1,
+        "class_name": "background",
+        "tp": 154608884,
+        "fp": 25950132,
+        "fn": 41088365,
+        "support": 195697249,
+        "predicted_pixels": 180559016,
+        "precision": 0.8562789464913787,
+        "recall": 0.7900411722190331,
+        "iou": 0.6975443756766068,
+        "top_fp_sources": [
+          {
+            "class_id": 6,
+            "class_name": "vegetation",
+            "pixels": 10356363,
+            "share_of_fp": 0.3990871029095343
+          },
+          {
+            "class_id": 2,
+            "class_name": "building",
+            "pixels": 7323445,
+            "share_of_fp": 0.2822122446236497
+          },
+          {
+            "class_id": 3,
+            "class_name": "road",
+            "pixels": 2894175,
+            "share_of_fp": 0.11152833442234514
+          },
+          {
+            "class_id": 7,
+            "class_name": "agricultural",
+            "pixels": 2244465,
+            "share_of_fp": 0.08649146755785289
+          },
+          {
+            "class_id": 5,
+            "class_name": "barren",
+            "pixels": 2079901,
+            "share_of_fp": 0.08014991985397223
+          },
+          {
+            "class_id": 4,
+            "class_name": "water",
+            "pixels": 1012371,
+            "share_of_fp": 0.039012171498780814
+          },
+          {
+            "class_id": 8,
+            "class_name": "vehicle",
+            "pixels": 39412,
+            "share_of_fp": 0.0015187591338649067
+          }
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "building",
+        "tp": 113637162,
+        "fp": 11135810,
+        "fn": 10983916,
+        "support": 124621078,
+        "predicted_pixels": 124772972,
+        "precision": 0.9107514245953843,
+        "recall": 0.9118614910392606,
+        "iou": 0.8370636928566011,
+        "top_fp_sources": [
+          {
+            "class_id": 1,
+            "class_name": "background",
+            "pixels": 9654453,
+            "share_of_fp": 0.8669735744413742
+          },
+          {
+            "class_id": 6,
+            "class_name": "vegetation",
+            "pixels": 622265,
+            "share_of_fp": 0.05587963515900505
+          },
+          {
+            "class_id": 3,
+            "class_name": "road",
+            "pixels": 448590,
+            "share_of_fp": 0.04028355368850582
+          },
+          {
+            "class_id": 5,
+            "class_name": "barren",
+            "pixels": 390922,
+            "share_of_fp": 0.035104945217276515
+          },
+          {
+            "class_id": 8,
+            "class_name": "vehicle",
+            "pixels": 11646,
+            "share_of_fp": 0.0010458152572646266
+          },
+          {
+            "class_id": 7,
+            "class_name": "agricultural",
+            "pixels": 5254,
+            "share_of_fp": 0.00047181121085938067
+          },
+          {
+            "class_id": 4,
+            "class_name": "water",
+            "pixels": 2680,
+            "share_of_fp": 0.0002406650257143396
+          }
+        ]
+      },
+      {
+        "class_id": 3,
+        "class_name": "road",
+        "tp": 59634438,
+        "fp": 9543182,
+        "fn": 4517313,
+        "support": 64151751,
+        "predicted_pixels": 69177620,
+        "precision": 0.8620481305948369,
+        "recall": 0.9295839485347797,
+        "iou": 0.809206760524499,
+        "top_fp_sources": [
+          {
+            "class_id": 1,
+            "class_name": "background",
+            "pixels": 7146571,
+            "share_of_fp": 0.7488666778020161
+          },
+          {
+            "class_id": 6,
+            "class_name": "vegetation",
+            "pixels": 1272182,
+            "share_of_fp": 0.1333079469719848
+          },
+          {
+            "class_id": 2,
+            "class_name": "building",
+            "pixels": 555845,
+            "share_of_fp": 0.05824524775908078
+          },
+          {
+            "class_id": 7,
+            "class_name": "agricultural",
+            "pixels": 240114,
+            "share_of_fp": 0.025160790185076633
+          },
+          {
+            "class_id": 4,
+            "class_name": "water",
+            "pixels": 201488,
+            "share_of_fp": 0.021113293239089437
+          },
+          {
+            "class_id": 5,
+            "class_name": "barren",
+            "pixels": 92190,
+            "share_of_fp": 0.00966029988739605
+          },
+          {
+            "class_id": 8,
+            "class_name": "vehicle",
+            "pixels": 34792,
+            "share_of_fp": 0.0036457441553561483
+          }
+        ]
+      },
+      {
+        "class_id": 4,
+        "class_name": "water",
+        "tp": 51265050,
+        "fp": 4245003,
+        "fn": 2357162,
+        "support": 53622212,
+        "predicted_pixels": 55510053,
+        "precision": 0.9235273113502522,
+        "recall": 0.9560413136257788,
+        "iou": 0.8859083679765822,
+        "top_fp_sources": [
+          {
+            "class_id": 1,
+            "class_name": "background",
+            "pixels": 2855615,
+            "share_of_fp": 0.672700349092804
+          },
+          {
+            "class_id": 6,
+            "class_name": "vegetation",
+            "pixels": 775983,
+            "share_of_fp": 0.18279916409953068
+          },
+          {
+            "class_id": 7,
+            "class_name": "agricultural",
+            "pixels": 466512,
+            "share_of_fp": 0.10989674212244373
+          },
+          {
+            "class_id": 5,
+            "class_name": "barren",
+            "pixels": 121070,
+            "share_of_fp": 0.02852059232938116
+          },
+          {
+            "class_id": 2,
+            "class_name": "building",
+            "pixels": 16587,
+            "share_of_fp": 0.003907417733273686
+          },
+          {
+            "class_id": 3,
+            "class_name": "road",
+            "pixels": 9236,
+            "share_of_fp": 0.0021757346225668157
+          }
+        ]
+      },
+      {
+        "class_id": 5,
+        "class_name": "barren",
+        "tp": 10111668,
+        "fp": 6316521,
+        "fn": 3252673,
+        "support": 13364341,
+        "predicted_pixels": 16428189,
+        "precision": 0.6155071627189096,
+        "recall": 0.7566155338299135,
+        "iou": 0.5137817642337007,
+        "top_fp_sources": [
+          {
+            "class_id": 1,
+            "class_name": "background",
+            "pixels": 4131201,
+            "share_of_fp": 0.6540310718511029
+          },
+          {
+            "class_id": 6,
+            "class_name": "vegetation",
+            "pixels": 877071,
+            "share_of_fp": 0.138853492294255
+          },
+          {
+            "class_id": 2,
+            "class_name": "building",
+            "pixels": 733731,
+            "share_of_fp": 0.11616062069610787
+          },
+          {
+            "class_id": 7,
+            "class_name": "agricultural",
+            "pixels": 433656,
+            "share_of_fp": 0.06865424812171131
+          },
+          {
+            "class_id": 3,
+            "class_name": "road",
+            "pixels": 74140,
+            "share_of_fp": 0.011737473840425765
+          },
+          {
+            "class_id": 4,
+            "class_name": "water",
+            "pixels": 66722,
+            "share_of_fp": 0.010563093196397194
+          }
+        ]
+      },
+      {
+        "class_id": 6,
+        "class_name": "vegetation",
+        "tp": 193519071,
+        "fp": 12862968,
+        "fn": 15351155,
+        "support": 208870226,
+        "predicted_pixels": 206382039,
+        "precision": 0.9376739949739522,
+        "recall": 0.9265038617806638,
+        "iou": 0.8727564308661878,
+        "top_fp_sources": [
+          {
+            "class_id": 1,
+            "class_name": "background",
+            "pixels": 9111852,
+            "share_of_fp": 0.7083786572430251
+          },
+          {
+            "class_id": 2,
+            "class_name": "building",
+            "pixels": 2170253,
+            "share_of_fp": 0.16872101368828718
+          },
+          {
+            "class_id": 7,
+            "class_name": "agricultural",
+            "pixels": 643365,
+            "share_of_fp": 0.0500168390374601
+          },
+          {
+            "class_id": 3,
+            "class_name": "road",
+            "pixels": 491760,
+            "share_of_fp": 0.038230678953722036
+          },
+          {
+            "class_id": 4,
+            "class_name": "water",
+            "pixels": 227135,
+            "share_of_fp": 0.01765805527931034
+          },
+          {
+            "class_id": 5,
+            "class_name": "barren",
+            "pixels": 156700,
+            "share_of_fp": 0.012182258402570853
+          },
+          {
+            "class_id": 8,
+            "class_name": "vehicle",
+            "pixels": 61903,
+            "share_of_fp": 0.0048124973956244
+          }
+        ]
+      },
+      {
+        "class_id": 7,
+        "class_name": "agricultural",
+        "tp": 51772092,
+        "fp": 9804298,
+        "fn": 4033366,
+        "support": 55805458,
+        "predicted_pixels": 61576390,
+        "precision": 0.8407782918095719,
+        "recall": 0.9277245247230118,
+        "iou": 0.7890913662291321,
+        "top_fp_sources": [
+          {
+            "class_id": 1,
+            "class_name": "background",
+            "pixels": 7163448,
+            "share_of_fp": 0.7306436422067139
+          },
+          {
+            "class_id": 6,
+            "class_name": "vegetation",
+            "pixels": 1103844,
+            "share_of_fp": 0.11258776508017199
+          },
+          {
+            "class_id": 4,
+            "class_name": "water",
+            "pixels": 846766,
+            "share_of_fp": 0.08636681585973825
+          },
+          {
+            "class_id": 5,
+            "class_name": "barren",
+            "pixels": 411890,
+            "share_of_fp": 0.0420111669392342
+          },
+          {
+            "class_id": 2,
+            "class_name": "building",
+            "pixels": 143619,
+            "share_of_fp": 0.014648575553293056
+          },
+          {
+            "class_id": 3,
+            "class_name": "road",
+            "pixels": 134731,
+            "share_of_fp": 0.013742034360848681
+          }
+        ]
+      },
+      {
+        "class_id": 8,
+        "class_name": "vehicle",
+        "tp": 5742090,
+        "fp": 1873789,
+        "fn": 147753,
+        "support": 5889843,
+        "predicted_pixels": 7615879,
+        "precision": 0.7539628715214619,
+        "recall": 0.9749139323408111,
+        "iou": 0.7396138817501912,
+        "top_fp_sources": [
+          {
+            "class_id": 1,
+            "class_name": "background",
+            "pixels": 1025225,
+            "share_of_fp": 0.5471400461844957
+          },
+          {
+            "class_id": 3,
+            "class_name": "road",
+            "pixels": 464681,
+            "share_of_fp": 0.2479900351640446
+          },
+          {
+            "class_id": 6,
+            "class_name": "vegetation",
+            "pixels": 343447,
+            "share_of_fp": 0.1832901143084947
+          },
+          {
+            "class_id": 2,
+            "class_name": "building",
+            "pixels": 40436,
+            "share_of_fp": 0.021579804342964977
+          }
+        ]
+      }
+    ]
+  },
+  "online_score_user_reported": 65.6259,
+  "online_miou_user_reported": 0.656259,
+  "online_class_metrics_available": false
+}

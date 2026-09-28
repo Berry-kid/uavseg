@@ -1,0 +1,16 @@
+{
+  "prove\\training_monitor\\train_monitored.py": "c0bd1eb5aff8fcfb59f023fd8d86ed64bf3d4541f5244a7bf9fe863ddf473eb9",
+  "prove\\training_monitor\\monitoring.py": "8c4a2cabd2d989bff8bc799365a4c9e042bfa30ca3eced80a9c5bc265ae5654e",
+  "train.py": "cc4bdd80b546bc7c22681d658101f570bf6fd54e3dbefef548f4e3c05a20beaf",
+  "predict.py": "510734a3abc47d0bad0e55c56e78a2adfd4ec80e5c6f3db711de0ba9e1e80784",
+  "select_tta.py": "fa92bdc932bd815666faaf712e2fef9097fecf0c1576e0d502de09cca342fd2d",
+  "validate_submission.py": "305cc07610e1fb76343f3400055ba0e2d2fba2d47f7365809f9888c2f6987f8a",
+  "requirements.txt": "ac6448e7f0771d4d2234bada129ec72bb0c0db757476041cc02ba92a96d35ec9",
+  "runs\\runs\\continue-v1\\best_tta.pt": "75e0015b6f4372d2a9271e7b2bf95c73a2570a219758f2941afe5de6dcaa1397",
+  "runs\\runs\\continue-v1\\split.json": "d2c8595a0cb2ca16a531f5370fbebf68dba8ac799ebc32ed60df965362209844",
+  "uavseg\\__init__.py": "9a7ed28471e4bc52f71e8dca2396448eda78e1334e51572f1804b76aef167761",
+  "uavseg\\core.py": "242f407477e9516eabdd56fed055e440bcd85f64a5e6c2a5134080ce4699e95f",
+  "uavseg\\data.py": "c4732ce4b9da08cb8b723a3a178b633a133b160f711fbb2277b59eecd5f89a4b",
+  "uavseg\\inference.py": "6c7908df143a062983784a563cf194f1759fef028ef43256f42389db044c11bd",
+  "uavseg\\selection.py": "a76a105026532daf7d641a487fe0115f54def63955458535d7701e41708019f2"
+}

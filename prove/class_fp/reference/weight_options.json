@@ -1,0 +1,94 @@
+{
+  "inverse": {
+    "schema_version": 1,
+    "class_weighting": "inverse",
+    "formula": "1/frequency",
+    "normalization": "mean weight over IDs 1..8 equals 1; ID0 target ignored",
+    "training_images": 6297,
+    "training_names_sha256": "2330294b29a981a6fe4a0708d1ce1949b2a41e704928290e1166f81272050de0",
+    "pixel_counts_ids_0_to_8": [
+      88699593,
+      1831225619,
+      1197916194,
+      581374747,
+      401606503,
+      119384516,
+      1873693238,
+      458195877,
+      50786785
+    ],
+    "class_weights_ids_0_to_8": [
+      0.0,
+      0.12010534107685089,
+      0.18360213935375214,
+      0.3783101439476013,
+      0.5476504564285278,
+      1.8422821760177612,
+      0.11738312989473343,
+      0.480012983083725,
+      4.330653667449951
+    ],
+    "missing_training_classes": [],
+    "count_source": "only masks named in the saved training split",
+    "loss": "weighted main CE + 0.5 Dice + 0.4 weighted auxiliary CE",
+    "cross_experiment_loss_warning": "Weighted CE losses from different weighting schemes are not directly comparable."
+  },
+  "inverse_sqrt": {
+    "schema_version": 1,
+    "class_weighting": "inverse_sqrt",
+    "formula": "1/sqrt(frequency)",
+    "normalization": "mean weight over IDs 1..8 equals 1; ID0 target ignored",
+    "training_images": 6297,
+    "training_names_sha256": "2330294b29a981a6fe4a0708d1ce1949b2a41e704928290e1166f81272050de0",
+    "pixel_counts_ids_0_to_8": [
+      88699593,
+      1831225619,
+      1197916194,
+      581374747,
+      401606503,
+      119384516,
+      1873693238,
+      458195877,
+      50786785
+    ],
+    "class_weights_ids_0_to_8": [
+      0.0,
+      0.4198257029056549,
+      0.5190709829330444,
+      0.7450953722000122,
+      0.8964778780937195,
+      1.644242763519287,
+      0.4150407314300537,
+      0.8392944931983948,
+      2.520951986312866
+    ],
+    "missing_training_classes": [],
+    "count_source": "only masks named in the saved training split",
+    "loss": "weighted main CE + 0.5 Dice + 0.4 weighted auxiliary CE",
+    "cross_experiment_loss_warning": "Weighted CE losses from different weighting schemes are not directly comparable."
+  },
+  "none": {
+    "schema_version": 1,
+    "class_weighting": "none",
+    "formula": "unweighted CE",
+    "normalization": "mean weight over IDs 1..8 equals 1; ID0 target ignored",
+    "training_images": 6297,
+    "training_names_sha256": "2330294b29a981a6fe4a0708d1ce1949b2a41e704928290e1166f81272050de0",
+    "pixel_counts_ids_0_to_8": [
+      88699593,
+      1831225619,
+      1197916194,
+      581374747,
+      401606503,
+      119384516,
+      1873693238,
+      458195877,
+      50786785
+    ],
+    "class_weights_ids_0_to_8": null,
+    "missing_training_classes": [],
+    "count_source": "only masks named in the saved training split",
+    "loss": "weighted main CE + 0.5 Dice + 0.4 weighted auxiliary CE",
+    "cross_experiment_loss_warning": "Weighted CE losses from different weighting schemes are not directly comparable."
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "training_integration_tests": {
+    "synthetic_only": true,
+    "not_competition_scores": true,
+    "passed": true,
+    "tests_run": 9,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "original_sources_unchanged": true,
+    "evidence": {
+      "fixture": {
+        "train_images": 8,
+        "val_images": 2,
+        "size": [
+          32,
+          32
+        ],
+        "cuda": "NVIDIA GeForce RTX 4070 Laptop GPU",
+        "torch": "2.13.0+cu126"
+      },
+      "inverse_control": {
+        "epochs": 3,
+        "all_model_tensors_bitwise_equal": true,
+        "losses_and_scores_equal": true
+      },
+      "sqrt_treatment": {
+        "updated_tensors_differ": [
+          "body.0.weight",
+          "body.0.bias",
+          "body.1.weight",
+          "body.1.bias",
+          "body.1.running_mean",
+          "body.1.running_var",
+          "head.weight",
+          "head.bias",
+          "aux.weight",
+          "aux.bias"
+        ],
+        "precision_recall_logged": true
+      },
+      "resume": {
+        "interrupted_epoch": 1,
+        "completed_epoch": 3,
+        "canonical_epochs": [
+          1,
+          2,
+          3
+        ],
+        "changed_mode_split_counts_rejected": true,
+        "checkpoint_weight_metadata_mismatch_rejected": true,
+        "bitwise_uninterrupted_equivalence_claimed": false
+      },
+      "final_tta": {
+        "actual_inference": true,
+        "validation_images": 2,
+        "scales": [
+          0.75,
+          1,
+          1.25
+        ],
+        "flip": true,
+        "tile": 16,
+        "separate_fp_report": true
+      },
+      "inverse_ignore_zero": {
+        "loss_equal": true,
+        "gradient_equal": true,
+        "sqrt_gradient_changed": true
+      }
+    },
+    "output": "C:\\Users\\47348\\Desktop\\AIC2\\qw-advice\\prove\\class_fp\\smoke_d81c6ab2cd",
+    "failure_details": []
+  },
+  "diagnostic_unit_tests": {
+    "run": 10,
+    "passed": true,
+    "reported_by": "independent implementation/review agent"
+  },
+  "real_train_mask_count": 6297,
+  "original_weights_exactly_reproduced": true,
+  "comparison_selfcheck_delta": 0.0,
+  "original_files_sha256_unchanged": true,
+  "formal_training_completed": false,
+  "real_score_improvement_verified": false,
+  "shell_launcher_note": "Linux bash launcher supplied; local Windows host has no bash for execution."
+}
